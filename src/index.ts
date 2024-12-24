@@ -2,10 +2,9 @@ import { NextApiRequest, NextApiResponse } from "next";
 import OmitCallSignature from "omit-call-signature";
 import * as UnifiedApi from "unified-api";
 
-export abstract class NextApiTemplate<TDependencies> extends UnifiedApi.ApiTemplate<
+export abstract class NextApiTemplate<
 	TDependencies,
-	NextApiRequest
-> {}
+> extends UnifiedApi.ApiTemplate<TDependencies, NextApiRequest> {}
 
 export class NextResponse<TSend> implements UnifiedApi.ApiResponse<TSend> {
 	constructor(public innerRes: NextApiResponse) {}

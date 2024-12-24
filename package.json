@@ -1,7 +1,7 @@
 {
 	"name": "unified-api-nextjs",
-	"version": "1.0.0",
-	"description": "",
+	"version": "1.0.1",
+	"description": "Next.js presets for Unified API",
 	"author": "Decatur Robotics",
 	"license": "MIT",
 	"scripts": {

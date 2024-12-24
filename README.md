@@ -6,7 +6,7 @@ Works like the regular [`unified-api`](https://www.npmjs.com/package/unified-api
 
 In place of `ApiTemplate`, use `NextApiTemplate`. Likewise, use `NextServerApi` in place of `ServerApi`.
 
-To connect Next.js to the API, use the following snippet:
+To connect Next.js to the API, create a `pages/api/[...api].ts` (`/app` should also work) file with the following code:
 
 ```typescript
 import ClientApi from "@/lib/api/ClientApi"; // Your ApiTemplate subclass
