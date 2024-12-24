@@ -4,7 +4,8 @@ Install with `npm i unified-api-nextjs`.
 
 Works like the regular [`unified-api`](https://www.npmjs.com/package/unified-api) package, but with types for Next.js.
 
-In place of `ApiTemplate`, use `NextApiTemplate`. Likewise, use `NextServerApi` in place of `ServerApi`.
+In place of `ApiTemplate`, use `NextApiTemplate`. Likewise, use `NextServerApi` in place of `ServerApi`. Create routes
+with `createNextRoute`. Requests and responses use Next.js's `NextApiRequest` and this package's `NextResponse` types.
 
 To connect Next.js to the API, create a `pages/api/[...api].ts` (`/app` should also work) file with the following code:
 

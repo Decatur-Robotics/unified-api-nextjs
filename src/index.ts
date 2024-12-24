@@ -25,7 +25,7 @@ export class NextResponse<TSend> implements UnifiedApi.ApiResponse<TSend> {
 	}
 }
 
-export function createRoute<
+export function createNextRoute<
 	TArgs extends Array<any>,
 	TReturn,
 	TDependencies,
