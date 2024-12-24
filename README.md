@@ -1,16 +1,26 @@
-# NPM Package Template
+# Next.js for Unified API
 
-To get started, use this repo as a template and do the following:
+Install with `npm i unified-api-nextjs`.
 
-- Update the details in package.json
-- Update the assignees in .github/dependabot.yml
-- Add your NPM_TOKEN to the repository secrets (needed to publish to NPM)
-- Add your GIT_PUSH_TOKEN to the repository secrets (needed to auto-increment the version number)
+Works like the regular [`unified-api`](https://www.npmjs.com/package/unified-api) package, but with types for Next.js.
 
-Branch protection is set up for the main branch, requiring you to PR into main, have at least one review, and pass CI checks. Creating a PR will also automatically increment the patch number.
+In place of `ApiTemplate`, use `NextApiTemplate`. Likewise, use `NextServerApi` in place of `ServerApi`.
 
-Comes with ESLint, Prettier, and Jest set up. To run tests, use `npm test`. To run linting, use `npm run lint`. To run prettier, use `npm run format`.
+To connect Next.js to the API, use the following snippet:
 
-Commits to main are automatically published to NPM (provided your CI checks pass and you've changed the package name).
+```typescript
+import ClientApi from "@/lib/api/ClientApi"; // Your ApiTemplate subclass
+import ServerApi from "@/lib/api/ServerApi"; // Your ServerApi subclass
+import { NextApiRequest, NextApiResponse } from "next";
 
-NPM Package Template © 2024 by Decatur Robotics is licensed under the MIT license.
+const api = new ServerApi(new ClientApi());
+
+export default async function handler(
+	req: NextApiRequest,
+	res: NextApiResponse,
+) {
+	api.handle(req, res);
+}
+```
+
+Next.js for Unified API © 2024 by Decatur Robotics is licensed under the MIT license.
