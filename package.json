@@ -36,6 +36,6 @@
 	},
 	"dependencies": {
 		"next": "^15.1.2",
-		"unified-api": "^1.0.18"
+		"unified-api": "^1.0.19"
 	}
 }
