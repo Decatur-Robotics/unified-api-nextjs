@@ -30,6 +30,7 @@ export function createNextRoute<
 	TReturn,
 	TDependencies,
 	TFetchedDuringAuth,
+	TLocalDependencies extends object = {},
 >(
 	server: Omit<
 		OmitCallSignature<
@@ -39,7 +40,8 @@ export function createNextRoute<
 				TDependencies,
 				TFetchedDuringAuth,
 				NextApiRequest,
-				NextResponse<TReturn>
+				NextResponse<TReturn>,
+				TLocalDependencies
 			>
 		>,
 		"subUrl"
@@ -51,9 +53,10 @@ export function createNextRoute<
 	TDependencies,
 	TFetchedDuringAuth,
 	NextApiRequest,
-	NextResponse<TReturn>
+	NextResponse<TReturn>,
+	TLocalDependencies
 > {
-	return UnifiedApi.createRoute(server, clientHandler);
+	return UnifiedApi.createRoute(server as any, clientHandler);
 }
 
 export abstract class NextServerApi<TDependencies> extends UnifiedApi.ServerApi<
